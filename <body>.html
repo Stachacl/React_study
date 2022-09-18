@@ -8,7 +8,12 @@
       function UsernameForm() {
         function handleSubmit(event) {
           event.preventDefault();
-          const userName = 'test name'
+        // these two methodsa are not perfect because if you have more then 1 form it will be confused:
+        // const userName = document.querySelector('input').value 
+        // or
+        // const userName =event.target.elements[0].value
+
+        
           alert(`You enered: ${userName}`)
         }
         return (

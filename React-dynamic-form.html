@@ -6,24 +6,23 @@
     <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
     <script type="text/babel">
       function UsernameForm() {
-        const userNameInputRef = React.useRef()
+        const [userName, setUserName] = React.useState("");
         function handleSubmit(event) {
           event.preventDefault();
-          // these two methodsa are not perfect because if you have more then 1 form it will be confused if you change the order of forms:
-          // const userName = document.querySelector('input').value // not use this
-          // or
-          // const userName =event.target.elements[0].value // not use this
-
-          const userName = userNameInputRef.current.value
-        //   const userName = event.target.elements.userNameInput.value; // can use this instead of ref
-          
           alert(`You enered: ${userName}`);
+        }
+        function handleChange(event) {
+          setUserName(event.target.value);
         }
         return (
           <form onSubmit={handleSubmit}>
             <div>
               <label htmlFor="userNameInput"> Username </label>
-              <input ref={userNameInputRef} id="userNameInput" type="text" />
+              <input
+                id="userNameInput"
+                type="text"
+                onChange={handleChange}
+              />
             </div>
             <button type="submit">Submit</button>
           </form>

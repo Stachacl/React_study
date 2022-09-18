@@ -24,6 +24,7 @@
                 id="userNameInput"
                 type="text"
                 onChange={handleChange}
+                value={userName} //meaning that we control the state of the input now, not React
               />
             </div>
             <div style={{color: 'red'}}>{errorCase}</div>

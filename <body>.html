@@ -6,8 +6,13 @@
     <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
     <script type="text/babel">
       function UsernameForm() {
+
+       function handleSubmit() {
+       console.log('submited!')
+
+       }
        return (
-           <form>
+           <form onSubmit={handleSubmit}>
             <div>
                 <label> Username </label>
                 <input type="text"/>

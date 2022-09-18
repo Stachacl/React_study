@@ -6,22 +6,22 @@
     <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
     <script type="text/babel">
       function UsernameForm() {
-
-       function handleSubmit() {
-       console.log('submited!')
-
-       }
-       return (
-           <form onSubmit={handleSubmit}>
+        function handleSubmit(event) {
+          event.preventDefault();
+          const userName = 'test name'
+          alert(`You enered: ${userName}`)
+        }
+        return (
+          <form onSubmit={handleSubmit}>
             <div>
-                <label> Username </label>
-                <input type="text"/>
+              <label> Username </label>
+              <input type="text" />
             </div>
             <button type="submit">Submit</button>
-           </form>
-       )
+          </form>
+        );
       }
-       ReactDOM.render(<UsernameForm/>, document.getElementById("root"));
+      ReactDOM.render(<UsernameForm />, document.getElementById("root"));
     </script>
   </body>
 </html>

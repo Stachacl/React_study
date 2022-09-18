@@ -27,6 +27,7 @@
                 value={userName} //meaning that we control the state of the input now, not React
               />
             </div>
+            <div><p>*Upper case will transform to lower case</p></div>
             <div style={{color: 'red'}}>{errorCase}</div>
             <button disabled={Boolean(errorCase)} type="submit">Submit</button>
           </form>

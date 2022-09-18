@@ -7,8 +7,6 @@
     <script type="text/babel">
       function UsernameForm() {
         const [userName, setUserName] = React.useState("");
-        const isLowerCase = userName === userName.toLowerCase()
-        const errorCase = isLowerCase ? null : "Please switch to lower case"
         function handleSubmit(event) {
           event.preventDefault();
           alert(`You enered: ${userName}`);
@@ -28,8 +26,7 @@
               />
             </div>
             <div><p>*Upper case will transform to lower case</p></div>
-            <div style={{color: 'red'}}>{errorCase}</div>
-            <button disabled={Boolean(errorCase)} type="submit">Submit</button>
+            <button type="submit">Submit</button>
           </form>
         );
       }
